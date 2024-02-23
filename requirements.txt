@@ -1,0 +1,5 @@
+opencv-python>=4.6.0.66
+numpy>=1.22.0
+pyautogui>=0.9.53
+keyboard>=0.13.5
+pyqt5>=5.15.4
