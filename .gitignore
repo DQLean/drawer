@@ -3,4 +3,6 @@
 *.jpeg
 *.webp
 
+!docs/*
+
 __pycache__/*
