@@ -1,6 +1,8 @@
 ## Drawer
 
-version 0.0.2-beta
+version = 0.0.2-beta
+
+python >= 3.8.8 64-bit
 
 **Load images and generate their contour maps, control the mouse to draw contour maps on the screen, for mouse drawing graffiti**
 

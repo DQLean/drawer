@@ -1,6 +1,8 @@
 ## Drawer
 
-version 0.0.2-beta
+version = 0.0.2-beta
+
+python >= 3.8.8 64-bit
 
 **加载图片并生成其轮廓图，控制鼠标在屏幕中绘制轮廓图，用于鼠绘涂鸦**
 
