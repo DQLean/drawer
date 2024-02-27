@@ -8,4 +8,4 @@ version 0.0.2-beta
 
 **点击 "start drawing" 按钮后会在3秒后接管你的鼠标**
 
-![示例](./doc/example.png)
+![示例](./docs/example.png)
