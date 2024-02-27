@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
 import pyautogui
-from typing import Tuple
 
 def load_image(image_path: str) -> np.ndarray:
     image = cv2.imread(image_path)
