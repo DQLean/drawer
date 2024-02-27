@@ -1,9 +1,15 @@
 import cv2
 import numpy as np
 import pyautogui
+from typing import Tuple
 
 def load_image(image_path: str) -> np.ndarray:
-    return cv2.imread(image_path)
+    image = cv2.imread(image_path)
+    if image is None:
+        with open(image_path, 'rb') as f:
+            data = np.frombuffer(f.read(), dtype=np.uint8)
+            image = cv2.imdecode(data, cv2.IMREAD_COLOR)
+    return image
 
 # Read the image and return the points sequence
 def read_image(image: np.ndarray, threshold1 = 30, threshold2 = 100, apertureSize = 3, L2gradient = True) -> list:
@@ -26,17 +32,21 @@ def read_image(image: np.ndarray, threshold1 = 30, threshold2 = 100, apertureSiz
 def resize_image_if_needed(image: np.ndarray, screen_width = None, screen_height = None) -> np.ndarray:
     if not screen_width or not screen_height:
         screen_width, screen_height = pyautogui.size()
-    image_height, image_width = image.shape[:2]
     
-    max_width = screen_width * 0.8
+    image_height, image_width = image.shape[:2]
+
+    max_width = screen_width * 0.4
     max_height = screen_height * 0.8
     
     if image_width > max_width or image_height > max_height:
         scale = min(max_width / image_width, max_height / image_height)
         resized_image = cv2.resize(image, None, fx=scale, fy=scale)
         return resize_image_if_needed(resized_image)
-    else:
-        return image
+
+    return image
+
+def create_white_image(width: int, height: int) -> np.ndarray:
+    return np.ones((height, width, 3), dtype=np.uint8) * 255
 
 # Show the image with the points
 # duration: 0 means the image will be closed manually
@@ -55,6 +65,6 @@ def show_image(image: np.ndarray, points_sequence: list, delay = 0):
 
 def get_contour_image(image: np.ndarray, points_sequence: list):
     for strokes in points_sequence:
-        for point in strokes:
-            cv2.circle(image, point, 1, (0, 255, 0), -1)
+        points = np.array(strokes, dtype=np.int32)
+        cv2.polylines(image, [points], isClosed=False, color=(0, 255, 0), thickness=1)
     return image
