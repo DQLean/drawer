@@ -3,6 +3,17 @@
 *.jpeg
 *.webp
 
+.venv/*
+PiPfile
+PiPfile.lock
+
+build/*
+dist/*
+drawer.spec
+
+_poetry_cache/*
+poetry.lock
+
 !docs/*
 
 __pycache__/*
