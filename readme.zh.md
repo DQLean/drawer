@@ -8,7 +8,8 @@ python >= 3.8.8 64-bit
 
 如果你想在鼠标被控制的中途中断操作，请使用键盘上的ESC
 
-**点击 "start drawing" 按钮后会在3秒后接管你的鼠标**
+ - 点击 "start drawing listen" 按钮后，会监听键盘F2按键，按下F2开始绘制
+ - 如果改变配置需要再次点击 "start drawing listen"
 
 ![example](./docs/example.png)
 

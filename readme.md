@@ -8,7 +8,8 @@ python >= 3.8.8 64-bit
 
 If you want to interrupt the operation during mouse control, please use ESC on the keyboard
 
-**After clicking the "start drawing" button, it will take over your mouse in 3 seconds**
+ - After clicking the "start drawing listen" button, it will listen to the F2 key on the keyboard and press F2 to start drawing
+ - If you need to change the configuration, you need to click "start drawing listen" again
 
 ![example](./docs/example.png)
 
