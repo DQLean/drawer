@@ -10,4 +10,6 @@ python >= 3.8.8 64-bit
 
 **点击 "start drawing" 按钮后会在3秒后接管你的鼠标**
 
-![示例](./docs/example.png)
+![example](./docs/example.png)
+
+![result](./docs/example2.png)

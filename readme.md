@@ -10,4 +10,6 @@ If you want to interrupt the operation during mouse control, please use ESC on t
 
 **After clicking the "start drawing" button, it will take over your mouse in 3 seconds**
 
-![示例](./docs/example.png)
+![example](./docs/example.png)
+
+![result](./docs/example2.png)
